@@ -1,3 +1,3 @@
-price_Medium = 1500
-price_Large = 2000
-price_XL = 3000
+price_Medium: int = 1500
+price_Large: int = 2000
+price_XL: int = 3000
