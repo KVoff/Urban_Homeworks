@@ -1,7 +1,7 @@
 import sqlite3
 
 
-connection = sqlite3.connect('not_telegram.db')  # module_14/homework_14_1.db
+connection = sqlite3.connect('module_14/homework_14_1.db')  # not_telegram.db
 cursor = connection.cursor()
 
 # Создаем таблицу с 4 полями:
