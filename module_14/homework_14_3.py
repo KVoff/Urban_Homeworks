@@ -22,7 +22,7 @@ kb = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='Информация'),
             KeyboardButton(text='Рассчитать')
-            ], 
+            ],
         [
             KeyboardButton(text='Купить')
             ]
@@ -39,7 +39,7 @@ kb_inline.add(button_inl_1)
 kb_inline.add(button_inl_2)
 
 catalog_kb = InlineKeyboardMarkup(
-    inline_keyboard= [
+    inline_keyboard=[
         [
             InlineKeyboardButton(text='Product1', callback_data='product_buying'),
             InlineKeyboardButton(text='Product2', callback_data='product_buying'),
@@ -77,15 +77,15 @@ async def get_buying_list(message):
         f'Название: Product{product1} | '
         f'Описание: описание {product1} | '
         f'Цена: {product1 * 100}'
-)
+    )
     with open('module_14/foto/1.png', 'rb')as img:
         await message.answer_photo(img)
-    
+
     await message.answer(
         f'Название: Product{product2} | '
         f'Описание: описание {product2} | '
         f'Цена: {product2 * 100}'
-)
+    )
     with open('module_14/foto/2.png', 'rb')as img:
         await message.answer_photo(img)
 
@@ -93,7 +93,7 @@ async def get_buying_list(message):
         f'Название: Product{product3} | '
         f'Описание: описание {product3} | '
         f'Цена: {product3 * 100}'
-)
+    )
     with open('module_14/foto/3.png', 'rb')as img:
         await message.answer_photo(img)
 
@@ -101,18 +101,16 @@ async def get_buying_list(message):
         f'Название: Product{product4} | '
         f'Описание: описание {product4} | '
         f'Цена: {product4 * 100}'
-)
+    )
     with open('module_14/foto/4.png', 'rb')as img:
         await message.answer_photo(img)
 
     await message.answer('Выберите продукт для покупки:', reply_markup=catalog_kb)
- 
+
 
 @dp.callback_query_handler(text='product_buying')
 async def send_confirm_message(call):
     await call.message.answer('Вы успешно приобрели продукт!')
-    
-
 
 
 @dp.callback_query_handler(text='formulas')
