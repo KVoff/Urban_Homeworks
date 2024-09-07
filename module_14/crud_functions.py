@@ -2,7 +2,7 @@ import sqlite3
 
 
 def initiate_db():
-    connection = sqlite3.connect('module_14/products.db')
+    connection = sqlite3.connect('products.db')  # module_14/products.db
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -19,7 +19,7 @@ def initiate_db():
 
 
 def get_all_products():
-    connection = sqlite3.connect('module_14/products.db')
+    connection = sqlite3.connect('products.db')  # module_14/products.db
     cursor = connection.cursor()
 
     # Получение всех продуктов
@@ -32,7 +32,7 @@ def get_all_products():
 
 # Пополнение продуктов, запускаем один раз:
 def populate_products():
-    connection = sqlite3.connect('module_14/products.db')
+    connection = sqlite3.connect('products.db')  # module_14/products.db
     cursor = connection.cursor()
 
     for i in range(1, 5):

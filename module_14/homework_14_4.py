@@ -91,7 +91,7 @@ async def get_buying_list(message):
             f'Цена: {price}'
         )
 
-        image_path = f'module_14/foto/{product_id}.png'
+        image_path = f'foto/{product_id}.png'  # module_14/foto/{product_id}.png
         with open(image_path, 'rb') as img:
             await message.answer_photo(img)
 
