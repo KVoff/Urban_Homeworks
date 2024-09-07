@@ -1,4 +1,4 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton  # type: ignore
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -24,6 +24,20 @@ catalog_kb = InlineKeyboardMarkup(
 
 buy_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text='купить', url='google.com')]
+        [InlineKeyboardButton(text='купить', url='google.com')],
+        [InlineKeyboardButton(text='назад', callback_data='back_to_catalog')]
+    ]
+)
+
+admin_panel = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [InlineKeyboardButton(text='Пользователи', callback_data='users')],
+        [InlineKeyboardButton(texts='Статистика', callback_data='stat')],
+        [
+            InlineKeyboardButton(texts='Блокировка',
+                                 callback_data='block'),
+            InlineKeyboardButton(texts='Разблокировка',
+                                 callback_data='unblock')
+        ]
     ]
 )

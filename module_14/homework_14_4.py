@@ -6,16 +6,16 @@ from aiogram.dispatcher.filters.state import State, StatesGroup  # type: ignore
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton  # type: ignore
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+from crud_functions import initiate_db, get_all_products
+
 
 load_dotenv("/usr//local/.env")
 
 bot = Bot(os.getenv("API_Ub"))
 dp = Dispatcher(bot, storage=MemoryStorage())
 
-product1 = 1
-product2 = 2
-product3 = 3
-product4 = 4
+"""ИНИЦИАЛИЗИРУЕМ БАЗУ ДАННЫХ"""
+initiate_db()
 
 kb = ReplyKeyboardMarkup(
     keyboard=[
@@ -75,39 +75,25 @@ async def main_menu(message):
     await message.answer('Выберите опцию:', reply_markup=kb_inline)
 
 
+"""Изменяем функцию get_buying_list."""
+
+
 @dp.message_handler(text='Купить')
 async def get_buying_list(message):
-    await message.answer(
-        f'Название: Product{product1} | '
-        f'Описание: описание {product1} | '
-        f'Цена: {product1 * 100}'
-    )
-    with open('module_14/foto/1.png', 'rb')as img:
-        await message.answer_photo(img)
 
-    await message.answer(
-        f'Название: Product{product2} | '
-        f'Описание: описание {product2} | '
-        f'Цена: {product2 * 100}'
-    )
-    with open('module_14/foto/2.png', 'rb')as img:
-        await message.answer_photo(img)
+    products = get_all_products()
 
-    await message.answer(
-        f'Название: Product{product3} | '
-        f'Описание: описание {product3} | '
-        f'Цена: {product3 * 100}'
-    )
-    with open('module_14/foto/3.png', 'rb')as img:
-        await message.answer_photo(img)
+    for product in products:
+        product_id, title, description, price = product
+        await message.answer(
+            f'Название: {title} | '
+            f'Описание: {description} | '
+            f'Цена: {price}'
+        )
 
-    await message.answer(
-        f'Название: Product{product4} | '
-        f'Описание: описание {product4} | '
-        f'Цена: {product4 * 100}'
-    )
-    with open('module_14/foto/4.png', 'rb')as img:
-        await message.answer_photo(img)
+        image_path = f'module_14/foto/{product_id}.png'
+        with open(image_path, 'rb') as img:
+            await message.answer_photo(img)
 
     await message.answer('Выберите продукт для покупки:',
                          reply_markup=catalog_kb)
