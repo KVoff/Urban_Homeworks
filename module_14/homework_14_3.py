@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # type: ignore
 from aiogram import Bot, Dispatcher, executor  # type: ignore
 from aiogram.contrib.fsm_storage.memory import MemoryStorage  # type: ignore
 from aiogram.dispatcher.filters.state import State, StatesGroup  # type: ignore
