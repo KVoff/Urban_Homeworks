@@ -4,6 +4,7 @@ Test and more/
 
 # Editors
 .vscode/
+*.code-workspace
 .idea/
 
 # Vagrant

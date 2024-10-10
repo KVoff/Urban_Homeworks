@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 
 from app.backend.db import Base
-from user import User
+from .user import User
 
 
 class Task(Base):
@@ -13,7 +13,11 @@ class Task(Base):
     priority = Column(Integer, default=0)
     completed = Column(Boolean, default=False)
     user_id = Column(
-            Integer, ForeignKey("users.id"), nullable=False, index=True)
+        Integer,
+        ForeignKey("users.id"),
+        nullable=False,
+        index=True,
+    )
     slug = Column(String, unique=True, index=True)
 
     # Объект связи с таблицей с таблицей User, где back_populates='tasks'.

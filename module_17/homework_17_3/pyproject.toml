@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "homework-17-2"
+name = "homework-17-3"
 version = "0.1.0"
-description = "FastApi + sqlalchemic"
+description = ""
 authors = ["Vladimir Kolesnikov <vk.coworking@gmail.com>"]
 readme = "README.md"
 
