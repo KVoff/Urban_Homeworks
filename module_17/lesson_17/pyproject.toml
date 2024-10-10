@@ -1,15 +1,13 @@
 [tool.poetry]
-name = "module-17"
+name = "lesson-17"
 version = "0.1.0"
-description = ""
+description = "Урок по fastApi"
 authors = ["Vladimir Kolesnikov <vk.coworking@gmail.com>"]
 readme = "README.md"
-packages = [{include = "module_17", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.12.7"
-fastapi = "^0.115.0"
-uvicorn = "^0.31.0"
+python = "3.12.7"
+sqlalchemy = "^2.0.35"
 
 
 [build-system]

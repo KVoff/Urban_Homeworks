@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "homework-17-2"
+version = "0.1.0"
+description = "FastApi + sqlalchemic"
+authors = ["Vladimir Kolesnikov <vk.coworking@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.7"
+pydantic = "^2.9.2"
+fastapi = "^0.115.0"
+sqlalchemy = "^2.0.35"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
