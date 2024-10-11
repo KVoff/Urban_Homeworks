@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "homework-17-5"
+version = "0.1.0"
+description = ""
+authors = ["Vladimir Kolesnikov <vk.coworking@gmail.com>"]
+readme = "README.md"
+packages = [{include = "homework_17_5", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "3.12.7"
+uvicorn = "^0.31.1"
+fastapi = "^0.115.0"
+sqlalchemy = "^2.0.35"
+python-slugify = "^8.0.4"
+pydantic = "^2.9.2"
+alembic = "^1.13.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
