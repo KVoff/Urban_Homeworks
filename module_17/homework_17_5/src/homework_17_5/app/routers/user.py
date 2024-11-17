@@ -19,7 +19,7 @@ async def all_users(db: Annotated[Session, Depends(get_db)]):
     return users
 
 
-@router.get('/user_id')
+@router.get('/{user_id}')
 async def user_by_id(db: Annotated[Session, Depends(get_db)], user_id: int):
     user = db.execute(select(User).where(User.id == user_id)).scalars().first()
 

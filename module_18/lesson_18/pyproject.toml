@@ -1,16 +1,14 @@
 [tool.poetry]
-name = "module-17"
+name = "lesson-18"
 version = "0.1.0"
 description = ""
 authors = ["Vladimir Kolesnikov <vk.coworking@gmail.com>"]
 readme = "README.md"
-packages = [{include = "module_17", from = "src"}]
+packages = [{include = "lesson_18", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.12.7"
-fastapi = "^0.115.0"
-uvicorn = "^0.31.0"
-sqlalchemy = "^2.0.35"
+python = "3.12.7"
+django = "^5.1.2"
 
 
 [build-system]

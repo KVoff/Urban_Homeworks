@@ -13,7 +13,7 @@ class User(Base):
     age = Column(Integer)
     slug = Column(String, unique=True, index=True)
 
-    # Объект связи с таблицей с таблицей User, где back_populates='tasks'.
+    # Объект связи с таблицей с таблицей User, где back_populates='user'.
     tasks = relationship("Task", back_populates="user")
 
 
